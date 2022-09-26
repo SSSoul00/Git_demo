@@ -12,6 +12,7 @@
         <module>spring-demo02</module>
         <module>annotation_bean03</module>
         <module>spring_mybatis</module>
+        <module>spring_AOP</module>
     </modules>
 
     <dependencies>
