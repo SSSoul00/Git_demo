@@ -1,7 +1,6 @@
-package com.sssoul.servoce;
+package com.sssoul.service;
 
 import com.sssoul.config.SpringConfig;
-import com.sssoul.service.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
