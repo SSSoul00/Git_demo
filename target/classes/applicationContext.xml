@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--    1.  导入Spring依赖-->
+    <!--    2.  声明被IOS容器管理的对象bean-->
+
+    <!--    四种IOS容器实例对象的方式-->
+    <!--    方式一 使用无参构造实例对象-->
+        <bean id="bookDao" name="dao" class="com.sssoul.dao.impl.BookDaoImpl" init-method="init" destroy-method="destroy"></bean>
+
+    <!--    方式二  使用静态工厂实例对象-->
+    <!--    <bean id="bookDao" class="com.sssoul.dao.Factory.BookDaoFactory" factory-method="getBookDao"></bean>-->
+
+    <!--    方式三  使用实例工厂实例化对象-->
+    <!--    <bean id="bookDaoFactory" class="com.sssoul.dao.Factory.BookDaoFactory2"></bean>-->
+    <!--    <bean id="bookDao" factory-bean="bookDaoFactory" factory-method="getBookDao"></bean>-->
+
+    <!--    方式四  实例工厂方式的优化变种(最实用！)-->
+<!--    <bean id="bookDao" class="com.sssoul.dao.Factory.BookDaoFactoryBean"></bean>-->
+
+
+    <bean id="bookService" class="com.sssoul.service.impl.BookServiceImpl">
+        <!--DI添加依赖-->
+        <property name="bookDao" ref="bookDao"></property>
+    </bean>
+</beans>
